@@ -77,14 +77,14 @@ body {
 .reel-box {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
-  width: 90vw;
-  max-width: 380px;
+  width: 85vw;
+  max-width: 360px;
   aspect-ratio: 9/16;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0;
+  margin: 15px 0;
   box-shadow: 0 0 20px #0004;
 }
 
@@ -99,8 +99,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   opacity: 0.95;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 
 /* BOTÃO DE PLAY */
@@ -118,6 +119,7 @@ body {
   cursor: pointer;
   backdrop-filter: blur(8px);
   display: none;
+  transition: 0.3s;
 }
 
 #playBtn.active {
@@ -125,19 +127,34 @@ body {
   color: #7b2cbf;
 }
 
-/* RESPONSIVIDADE */
+/* 🔧 RESPONSIVIDADE */
 @media (max-width: 600px) {
+  body {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 10px;
+    justify-content: space-evenly;
+  }
+
   .album {
     width: 70px;
     height: 70px;
   }
 
+  .song-info h2 {
+    font-size: 14px;
+  }
+
   .reel-box {
     width: 90vw;
-    max-width: 340px;
+    max-width: 320px;
+    aspect-ratio: 3/4;
   }
 
   .footer p {
-    font-size: 13px;
+    font-size: 12px;
   }
 }

@@ -4,7 +4,7 @@ const playBtn = document.getElementById("playBtn");
 // tenta tocar automaticamente
 window.addEventListener("load", () => {
   // Defina aqui o ponto de início da música (em segundos)
-  const startTime = 90; // Exemplo: 1 minuto e 23 segundos
+  const startTime = 97; // Exemplo: 1 minuto e 23 segundos
 
   // quando o áudio estiver carregado, começa do ponto escolhido
   audio.addEventListener("loadedmetadata", () => {
