@@ -158,3 +158,100 @@ body {
     font-size: 12px;
   }
 }
+
+
+
+
+/* ===================== */
+/* FRASES DENTRO DO QUADRADO */
+/* ===================== */
+.reel-box {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-box {
+  width: 80%;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.text-box.fade-out {
+  opacity: 0;
+}
+
+/* ===================== */
+/* SETAS */
+/* ===================== */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  font-size: 28px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.reel-box {
+  position: relative;
+  overflow: visible; /* deixa as setas aparecerem fora */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow.left {
+  left: -55px; /* seta fora, mas visível */
+}
+
+.arrow.right {
+  right: -55px;
+}
+
+/* Ajuste mobile */
+@media (max-width: 600px) {
+  .arrow.left { left: -40px; }
+  .arrow.right { right: -40px; }
+  .text-box { font-size: 15px; width: 85%; }
+}
+
+
+.reel-content h3 {
+  font-size: 18px;
+  padding: 20px;
+  opacity: 1;
+  transition: opacity 0.6s ease; /* tempo da animação */
+}
+
+/* quando some */
+.fade-out {
+  opacity: 0;
+}
+
+/* quando aparece */
+.fade-in {
+  opacity: 1;
+}

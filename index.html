@@ -20,11 +20,15 @@
     </header>
 
     <!-- MEIO: quadrado estilo reels -->
-    <main class="reel-box">
-      <div class="reel-content">
-        <h3>Com você, até o silêncio é bonito.</h3>
-      </div>
-    </main>
+    <div class="reel-box">
+  <button class="arrow left" id="prevBtn">❮</button>
+
+  <div class="text-box" id="textBox">
+    <p id="loveText">Você é o meu lugar preferido no mundo inteiro.</p>
+  </div>
+
+  <button class="arrow right" id="nextBtn">❯</button>
+</div>
 
     <!-- RODAPÉ: frases românticas -->
     <footer class="footer">
@@ -40,4 +44,47 @@
 
   <script src="script.js"></script>
 </body>
+
+
+<script>
+const texts = [
+  "Acredite em você mesmo e vá além.",
+  "O sucesso vem para quem não desiste.",
+  "Cada dia é uma nova chance de vencer.",
+  "A força está dentro de você.",
+  "Continue, mesmo quando for difícil."
+];
+
+let currentIndex = 0;
+const textElement = document.getElementById("reelText");
+const leftArrow = document.querySelector(".arrow.left");
+const rightArrow = document.querySelector(".arrow.right");
+
+function changeText(direction) {
+  // adiciona fade-out
+  textElement.classList.add("fade-out");
+
+  // espera a animação de desaparecer
+  setTimeout(() => {
+    if (direction === "next") {
+      currentIndex = (currentIndex + 1) % texts.length;
+    } else {
+      currentIndex = (currentIndex - 1 + texts.length) % texts.length;
+    }
+
+    // troca o texto e reaparece
+    textElement.textContent = texts[currentIndex];
+    textElement.classList.remove("fade-out");
+    textElement.classList.add("fade-in");
+
+    // remove a classe depois pra resetar
+    setTimeout(() => {
+      textElement.classList.remove("fade-in");
+    }, 600);
+  }, 600);
+}
+
+rightArrow.addEventListener("click", () => changeText("next"));
+leftArrow.addEventListener("click", () => changeText("prev"));
+</script>
 </html>
