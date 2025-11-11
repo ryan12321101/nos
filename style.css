@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background: linear-gradient(160deg, #7b2cbf, #ff8fab);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* MÚSICA */
+.music-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+  flex-direction: column;
+}
+
+.album {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #fff5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 15px #0005;
+  animation: spin 8s linear infinite;
+}
+
+.album-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.song-info h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.song-info p {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* REELS */
+.reel-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  width: 90vw;
+  max-width: 380px;
+  aspect-ratio: 9/16;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  box-shadow: 0 0 20px #0004;
+}
+
+.reel-content h3 {
+  font-size: 18px;
+  padding: 20px;
+}
+
+/* FRASES */
+.footer {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+/* BOTÃO DE PLAY */
+#playBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  display: none;
+}
+
+#playBtn.active {
+  background: #fff;
+  color: #7b2cbf;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+  .album {
+    width: 70px;
+    height: 70px;
+  }
+
+  .reel-box {
+    width: 90vw;
+    max-width: 340px;
+  }
+
+  .footer p {
+    font-size: 13px;
+  }
+}
